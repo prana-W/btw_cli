@@ -8,11 +8,12 @@ Follow these steps to set up the CLI in your machine.
 
 ---
 
-## 📦 Step 1: Clone the Repository
+## 📦 Step 1: Clone and Setup the Repository
 
 ```bash
 git clone https://github.com/prana-W/btw_cli.git
 cd btw_cli
+npm install
 ```
 
 ---
@@ -20,6 +21,9 @@ cd btw_cli
 ## 🖥️ Step 2: Run Platform-Specific Setup
 
 ### 🐧 Linux
+
+1. Open your default terminal
+2. Run the following command:
 
 ```bash
 sudo npm run setup
