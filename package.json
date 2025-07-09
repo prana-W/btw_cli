@@ -1,0 +1,34 @@
+{
+    "name": "w",
+    "version": "1.0.0",
+    "description": "This is a simple Command Line Interface to do basic tasks.",
+    "keywords": [
+        "cli",
+        "tool"
+    ],
+    "homepage": "https://github.com/prana-W/w#readme",
+    "bugs": {
+        "url": "https://github.com/prana-W/w/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prana-W/w.git"
+    },
+    "license": "ISC",
+    "author": "Pranaw Kumar",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "setup": "npm link",
+        "format": "npx prettier --write ."
+    },
+    "bin": {
+        "btw": "./index.js"
+    },
+    "dependencies": {
+        "commander": "^14.0.0"
+    },
+    "devDependencies": {
+        "prettier": "^3.6.2"
+    }
+}

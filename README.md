@@ -1,2 +1,46 @@
-# w
-w is a simple Command Line Interface (CLI) to do basic tasks. Currently under development!
+# btw_cli
+
+btw_cli (by the W) is a simple Command Line Interface (CLI) to do basic tasks. Currently under development!
+
+# ⚙️ Project Setup Guide
+
+Follow these steps to set up the CLI in your machine.
+
+---
+
+## 📦 Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/prana-W/btw_cli.git
+cd btw_cli
+```
+
+---
+
+## 🖥️ Step 2: Run Platform-Specific Setup
+
+### 🐧 Linux
+
+```bash
+sudo npm run setup
+```
+
+---
+
+### 🪟 Windows
+
+1. Open **Command Prompt** as Administrator  
+   (Search for `cmd` → Right-click → _Run as administrator_)
+
+2. Run the following command:
+
+```cmd
+npm run setup
+```
+
+---
+
+## ✅ Prerequisites
+
+- Node.js and npm must be installed (20.0.0 or higher).
+  [Download Node.js](https://nodejs.org/)
