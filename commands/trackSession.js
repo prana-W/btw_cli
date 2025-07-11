@@ -1,29 +1,23 @@
-import sessionData from '../storage/session.json' with { type: 'json' };
+import sessionStore from '../config/sessionStore.js'
 import timeConversion from '../utils/timeConversion.js';
-import fs from 'fs';
 
 function startSession() {
-    if (sessionData.isSessionActive) {
+    if (sessionStore.get('isSessionActive')) {
         console.error(
             'An existing session is already active. Kindly end the current session before starting a new one.',
         );
         return;
     }
-    fs.writeFileSync(
-        '../storage/session.json',
-        JSON.stringify({
-            ...sessionData,
-            startTimestamp: Date.now(),
-            isSessionActive: true,
-        }),
-        'utf8',
-    );
+
+    sessionStore.set('startTimestamp', Date.now());
+    sessionStore.set('isSessionActive', true);
+
     console.log('Session started successfully! Run \'btw end-session\' to end the session.');
 }
 
 //todo: Pop the sessionHistory if over 5 sessions
 function endSession() {
-    if (!sessionData.isSessionActive) {
+    if (!sessionStore.get('isSessionActive')) {
         console.error(
             'No active session found. Please start a session before attempting to end it.',
         );
@@ -32,30 +26,27 @@ function endSession() {
     const currentTime = Date.now();
 
     const { convertedTime: sessionDuration, unit } = timeConversion(
-        currentTime - sessionData.startTimestamp,
+        currentTime - sessionStore.get('startTimestamp'),
     );
 
-    fs.writeFileSync(
-        '../storage/session.json',
-        JSON.stringify({
-            ...sessionData,
-            endTimestamp: currentTime,
-            isSessionActive: false,
-            sessionHistory: [
-                `${sessionDuration} ${unit}`,
-                ...sessionData.sessionHistory,
-            ],
-        }),
-        'utf8',
-    );
+
+    const sessionHistory = sessionStore.get('sessionHistory');
+    if (sessionHistory?.length >= 5) {
+        sessionStore.set('sessionHistory', sessionHistory.pop());
+    }
+
+    sessionStore.set('endTimestamp', currentTime);
+    sessionStore.set('isSessionActive', false);
+    if (sessionHistory?.length > 0) sessionStore.set('sessionHistory', [`${sessionDuration} ${unit}`, ...sessionHistory]);
+    else sessionStore.set('sessionHistory', [`${sessionDuration} ${unit}`]);
 
     console.log(`Congrats! You worked for ${sessionDuration} ${unit}!`);
 }
 
 function sessionHistory() {
-    const sessionHistory = sessionData.sessionHistory;
+    const sessionHistory = sessionStore.get('sessionHistory') || [];
 
-    sessionHistory.map((session) => {
+   !!sessionHistory && sessionHistory.map((session) => {
         console.log(session);
     })
 }
