@@ -46,5 +46,5 @@ npm run setup
 
 ## ✅ Prerequisites
 
-- Node.js and npm must be installed (20.0.0 or higher).
+- Node.js and npm must be installed (24.0.0 or higher advised).
   [Download Node.js](https://nodejs.org/)
