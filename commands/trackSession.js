@@ -1,4 +1,4 @@
-import sessionStore from '../config/sessionStore.js'
+import sessionStore from '../config/sessionStore.js';
 import timeConversion from '../utils/timeConversion.js';
 
 function startSession() {
@@ -12,10 +12,11 @@ function startSession() {
     sessionStore.set('startTimestamp', Date.now());
     sessionStore.set('isSessionActive', true);
 
-    console.log('Session started successfully! Run \'btw end-session\' to end the session.');
+    console.log(
+        "Session started successfully! Run 'btw end-session' to end the session.",
+    );
 }
 
-//todo: Pop the sessionHistory if over 5 sessions
 function endSession() {
     if (!sessionStore.get('isSessionActive')) {
         console.error(
@@ -29,7 +30,6 @@ function endSession() {
         currentTime - sessionStore.get('startTimestamp'),
     );
 
-
     const sessionHistory = sessionStore.get('sessionHistory');
     if (sessionHistory?.length >= 5) {
         sessionStore.set('sessionHistory', sessionHistory.pop());
@@ -37,7 +37,11 @@ function endSession() {
 
     sessionStore.set('endTimestamp', currentTime);
     sessionStore.set('isSessionActive', false);
-    if (sessionHistory?.length > 0) sessionStore.set('sessionHistory', [`${sessionDuration} ${unit}`, ...sessionHistory]);
+    if (sessionHistory?.length > 0)
+        sessionStore.set('sessionHistory', [
+            `${sessionDuration} ${unit}`,
+            ...sessionHistory,
+        ]);
     else sessionStore.set('sessionHistory', [`${sessionDuration} ${unit}`]);
 
     console.log(`Congrats! You worked for ${sessionDuration} ${unit}!`);
@@ -46,9 +50,10 @@ function endSession() {
 function sessionHistory() {
     const sessionHistory = sessionStore.get('sessionHistory') || [];
 
-   !!sessionHistory && sessionHistory.map((session) => {
-        console.log(session);
-    })
+    !!sessionHistory &&
+        sessionHistory.map((session) => {
+            console.log(session);
+        });
 }
 
 export { startSession, endSession, sessionHistory };

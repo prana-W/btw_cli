@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 import { program } from 'commander';
 import { currentTime } from './commands/currentTime.js';
-import { startSession, endSession, sessionHistory } from './commands/trackSession.js';
+import {
+    startSession,
+    endSession,
+    sessionHistory,
+} from './commands/trackSession.js';
 
 program
     .name('btw')
@@ -41,7 +45,5 @@ program
     .aliases(['session-h', 'sh'])
     .description('Displays the history of the past 5 sessions')
     .action(sessionHistory);
-
-
 
 program.parse();

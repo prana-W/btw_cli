@@ -3,28 +3,28 @@ import Conf from 'conf';
 const sessionSchema = {
     startTimestamp: {
         type: 'date',
-        default: null
+        default: null,
     },
     endTimestamp: {
         type: 'date',
-        default: null
+        default: null,
     },
     isSessionActive: {
         type: 'boolean',
-        default: false
+        default: false,
     },
     sessionHistory: {
         type: 'array',
         items: {
-            type: 'string'
-        }
-    }
-}
+            type: 'string',
+        },
+    },
+};
 
 const sessionStore = new Conf({
     projectName: 'btw-cli',
     configName: 'sessionStore',
-    sessionSchema
+    sessionSchema,
 });
 
 export default sessionStore;
