@@ -1,6 +1,13 @@
 import resultRemark from '../utils/resultRemark.js';
 
 async function getResult(roll) {
+    if (!roll || roll.length < 10) {
+        console.error('Kindly enter a valid roll number!');
+        return;
+    }
+
+    roll = roll.toUpperCase();
+
     try {
         const allResult = await fetch(
             'https://cgpa-server.vercel.app/api/v1/getResults',

@@ -14,6 +14,6 @@ export default function restartSession(sgpa, cgpa, name) {
     }
 
     console.log(
-        `Hello, ${name}! Your SGPA: ${sgpa} and CGPA: ${cgpa}. ${remark}`,
+        `Hello, ${name}! Your SGPA: ${sgpa} and CGPA: ${cgpa}\n${remark}`,
     );
 }

@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import { currentTime } from './commands/currentTime.js';
 import {
+    currentTime,
     startSession,
     endSession,
     sessionHistory,
-} from './commands/trackSession.js';
+    getResult,
+} from './commands/index.js';
 
 program
     .name('btw')
     .description(
-        'btw - by the W, is a basic CLI Tool built by Pranaw Kumar for doing stuffs directly from the terminal!',
+        'btw_cli, is a basic CLI Tool built by Pranaw Kumar for doing stuffs directly from the terminal!',
     )
     .version('1.0.0');
 
@@ -45,5 +46,10 @@ program
     .aliases(['session-h', 'sh'])
     .description('Displays the history of the past 5 sessions')
     .action(sessionHistory);
+
+program
+    .command('result <roll>')
+    .description('Displays your result')
+    .action(getResult);
 
 program.parse();
