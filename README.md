@@ -38,6 +38,8 @@ git clone https://github.com/prana-W/btw_cli.git
 2. Simply **double-click** the file:  
    `setup_windows.bat`
 
+> ⚠️ NOTE: In case of warning saying `Windows protected your PC`, click on More info, swipe right and then click `Run Anyway`
+
 This will check your Node.js version and setup btw_cli.
 
 ---
