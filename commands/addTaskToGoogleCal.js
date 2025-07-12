@@ -1,6 +1,9 @@
 import open from 'open';
 import dayjs from 'dayjs';
+import enquirer from 'enquirer';
+import { addTaskToGoogleCalPrompts as questions } from '../utils/prompts.js';
 
+const { prompt } = enquirer;
 const currentTime = dayjs().locale('in').format('YYYYMMDDTHHmmss') + 'Z';
 
 function createRedirectLink({
@@ -15,13 +18,14 @@ function createRedirectLink({
     return `${baseUrl}&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(description)}`;
 }
 
-export default function addTaskToGoogleCal() {
+export default async function addTaskToGoogleCal() {
+    try {
+        const answers = await prompt(questions);
 
-    open(createRedirectLink({})).then(result => {
-        console.log('Google Calendar link opened in your browser!');
-    })
-        .catch((err) => {
-            console.error(err?.message || err);
-        });
+        const response = await open(createRedirectLink(answers));
 
+        if (!response) throw new Error('There was an error opening the link.');
+    } catch (err) {
+        console.error(err?.message || err);
+    }
 }

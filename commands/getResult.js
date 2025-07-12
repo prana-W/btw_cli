@@ -31,7 +31,7 @@ async function getResult(roll) {
             requiredResultData[0].Name,
         );
     } catch (err) {
-        console.error(err?.message);
+        console.error(err?.message || err);
     }
 }
 

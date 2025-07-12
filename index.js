@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { program } from 'commander';
 import {
     currentTime,
@@ -6,6 +7,7 @@ import {
     endSession,
     sessionHistory,
     getResult,
+    addTaskToGoogleCal,
 } from './commands/index.js';
 
 program
@@ -51,5 +53,11 @@ program
     .command('result <roll>')
     .description('Displays your result')
     .action(getResult);
+
+program
+    .command('add-task')
+    .aliases(['calender', 'at', 'cal'])
+    .description('Add a task in Google Calendar')
+    .action(addTaskToGoogleCal);
 
 program.parse();
