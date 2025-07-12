@@ -25,9 +25,7 @@ export default async function addTaskToGoogleCal() {
         let startTime;
 
         const timeVariable = answers?.start.split(''); //Makes an array from start input ([1, 'd'])
-        if (
-            timeVariable.length !== 2
-        ) {
+        if (timeVariable.length !== 2) {
             startTime = dayjs().locale('in').format('YYYYMMDD');
         } else
             startTime = dayjs()

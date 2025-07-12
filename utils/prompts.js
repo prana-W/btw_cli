@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-
 const addTaskToGoogleCalPrompts = [
     {
         type: 'input',
@@ -17,7 +15,8 @@ const addTaskToGoogleCalPrompts = [
         type: 'input',
         name: 'start',
         message: 'When does your task start?',
-        initial: 'Leave blank for current time and edit later. Examples: 1d, 2w, etc',
+        initial:
+            'Leave blank for current time and edit later. Examples: 1d, 2w, etc',
     },
 ];
 

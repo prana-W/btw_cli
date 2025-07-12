@@ -1,4 +1,6 @@
-// Comments on your CGPA because why not?!
+import chalk from 'chalk';
+
+// Comments on your Result because why not?!
 export default function restartSession(sgpa, cgpa, name) {
     let remark = null;
     if (cgpa >= 9.5) {
@@ -14,6 +16,6 @@ export default function restartSession(sgpa, cgpa, name) {
     }
 
     console.log(
-        `Hello, ${name}! Your SGPA: ${sgpa} and CGPA: ${cgpa}\n${remark}`,
+        `Hello, ${chalk.magenta(name)}! ${chalk.bold('Your SGPA:')} ${chalk.green(sgpa)} and ${chalk.bold('Your CGPA:')} ${chalk.green(cgpa)}\n${chalk.italic(remark)}`,
     );
 }

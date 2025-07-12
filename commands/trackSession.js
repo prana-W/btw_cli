@@ -1,10 +1,13 @@
 import sessionStore from '../config/sessionStore.js';
 import timeConversion from '../utils/timeConversion.js';
+import chalk from 'chalk';
 
 function startSession() {
     if (sessionStore.get('isSessionActive')) {
         console.error(
-            'An existing session is already active. Kindly end the current session before starting a new one.',
+            chalk.red(
+                'An existing session is already active. Kindly end the current session before starting a new one.',
+            ),
         );
         return;
     }
@@ -13,14 +16,16 @@ function startSession() {
     sessionStore.set('isSessionActive', true);
 
     console.log(
-        "Session started successfully! Run 'btw end-session' to end the session.",
+        `Session started successfully! Run ${chalk.green('btw end-session')} or ${chalk.green('btw es')} to end the session.`,
     );
 }
 
 function endSession() {
     if (!sessionStore.get('isSessionActive')) {
         console.error(
-            'No active session found. Please start a session before attempting to end it.',
+            chalk.red(
+                'No active session found. Please start a session before attempting to end it.',
+            ),
         );
         return;
     }
@@ -44,7 +49,9 @@ function endSession() {
         ]);
     else sessionStore.set('sessionHistory', [`${sessionDuration} ${unit}`]);
 
-    console.log(`Congrats! You worked for ${sessionDuration} ${unit}!`);
+    console.log(
+        `Congrats! You worked for ${chalk.yellow(sessionDuration + ' ' + unit)}!`,
+    );
 }
 
 function sessionHistory() {

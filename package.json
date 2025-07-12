@@ -26,6 +26,7 @@
         "btw": "./index.js"
     },
     "dependencies": {
+        "chalk": "^5.4.1",
         "commander": "^14.0.0",
         "conf": "^14.0.0",
         "dayjs": "^1.11.13",
