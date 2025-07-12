@@ -58,6 +58,6 @@ program
     .command('add-task')
     .aliases(['calender', 'at', 'cal'])
     .description('Add a task in Google Calendar')
-    .action(addTaskToGoogleCal);
+    .action((options) => addTaskToGoogleCal(options));
 
 program.parse();

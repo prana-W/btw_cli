@@ -4,13 +4,12 @@ import enquirer from 'enquirer';
 import { addTaskToGoogleCalPrompts as questions } from '../utils/prompts.js';
 
 const { prompt } = enquirer;
-const currentTime = dayjs().locale('in').format('YYYYMMDDTHHmmss') + 'Z';
 
 function createRedirectLink({
     title = 'Title',
     description = 'Description',
-    start = currentTime,
-    end = currentTime,
+    start,
+    end,
 }) {
     const baseUrl =
         'https://calendar.google.com/calendar/render?action=TEMPLATE';
@@ -22,9 +21,31 @@ export default async function addTaskToGoogleCal() {
     try {
         const answers = await prompt(questions);
 
-        const response = await open(createRedirectLink(answers));
+        // i can't make the below code beautiful. i am sowwy
+        let startTime;
+
+        const timeVariable = answers?.start.split(''); //Makes an array from start input ([1, 'd'])
+        if (
+            timeVariable.length !== 2
+        ) {
+            startTime = dayjs().locale('in').format('YYYYMMDD');
+        } else
+            startTime = dayjs()
+                .add(timeVariable[0], timeVariable[1])
+                .locale('in')
+                .format('YYYYMMDD');
+
+        const response = await open(
+            createRedirectLink({
+                ...answers,
+                start: startTime,
+                end: startTime,
+            }),
+        );
 
         if (!response) throw new Error('There was an error opening the link.');
+
+        console.log('Kindly confirm the details in your browser.');
     } catch (err) {
         console.error(err?.message || err);
     }
