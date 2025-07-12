@@ -1,18 +1,23 @@
 {
-    "name": "w",
-    "version": "1.0.0",
-    "description": "This is a simple Command Line Interface to do basic tasks.",
+    "name": "btw_cli",
+    "version": "0.1.0",
+    "description": "btw_cli (btw: by-the-W) is a simple and powerful Command Line Interface (CLI) designed to help you perform various useful tasks directly from your terminal.",
     "keywords": [
         "cli",
-        "tool"
+        "tool",
+        "terminal",
+        "productivity",
+        "command-line-interface",
+        "by-the-w",
+        "btw"
     ],
-    "homepage": "https://github.com/prana-W/w#readme",
+    "homepage": "https://github.com/prana-W/btw_cli#readme",
     "bugs": {
-        "url": "https://github.com/prana-W/w/issues"
+        "url": "https://github.com/prana-W/btw_cli/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/prana-W/w.git"
+        "url": "git+https://github.com/prana-W/btw_cli.git"
     },
     "license": "ISC",
     "author": "Pranaw Kumar",

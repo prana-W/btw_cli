@@ -15,7 +15,7 @@ program
     .description(
         'btw_cli, is a basic CLI Tool built by Pranaw Kumar for doing stuffs directly from the terminal!',
     )
-    .version('1.0.0');
+    .version('0.1.0');
 
 program
     .command('greet <name>')

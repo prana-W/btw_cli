@@ -1,6 +1,6 @@
 # btw_cli
 
-`btw_cli` (BTW: *By The W*) is a simple and powerful **Command Line Interface (CLI)** designed to help you perform various useful tasks directly from your terminal.
+`btw_cli` (btw: *by-the-W*) is a simple and powerful **Command Line Interface (CLI)** designed to help you perform various useful tasks directly from your terminal.
 
 It streamlines productivity with quick commands for time tracking, task scheduling, and result viewing — all accessible without leaving your terminal.
 
