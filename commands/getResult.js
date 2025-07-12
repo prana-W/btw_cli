@@ -1,4 +1,5 @@
 import resultRemark from '../utils/resultRemark.js';
+import { oraPromise } from 'ora';
 
 async function getResult(roll) {
     if (!roll || roll.length < 10) {
@@ -9,9 +10,11 @@ async function getResult(roll) {
     roll = roll.toUpperCase();
 
     try {
-        const allResult = await fetch(
-            'https://cgpa-server.vercel.app/api/v1/getResults',
+        const allResult = await oraPromise(
+            fetch('https://cgpa-server.vercel.app/api/v1/getResults'),
+            'Fetching your result...',
         );
+
         const allData = await allResult.json();
         const requiredResultData = allData.filter(
             (result) => result.Regn === roll,
