@@ -28,6 +28,7 @@ program
 
 program
     .command('time')
+    .aliases(['now', 't'])
     .description('Display the current time')
     .action(currentTime);
 
@@ -56,7 +57,7 @@ program
 
 program
     .command('add-task')
-    .aliases(['calender', 'at', 'cal'])
+    .aliases(['calender', 'cal'])
     .description('Add a task in Google Calendar')
     .action((options) => addTaskToGoogleCal(options));
 
