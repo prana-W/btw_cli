@@ -19,7 +19,7 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
-        "setup": "npm link",
+        "setup": "npm install && chmod +x index.js && npm link",
         "format": "npx prettier --write ."
     },
     "bin": {
