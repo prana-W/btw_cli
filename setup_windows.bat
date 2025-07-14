@@ -46,7 +46,7 @@ IF EXIST "!NPMPATH!\!CLI_CMD!" (
 )
 
 REM Step 4: Install & link
-echo Installing dependencies...
+echo Installing dependencies... (Might take several minutes. Please be patient!)
 call npm install || goto end
 
 echo Linking CLI globally...
