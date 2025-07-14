@@ -8,6 +8,7 @@ import {
     sessionHistory,
     getResult,
     addTaskToGoogleCal,
+    githubStats
 } from './commands/index.js';
 
 program
@@ -60,5 +61,11 @@ program
     .aliases(['calender', 'cal'])
     .description('Add a task in Google Calendar')
     .action((options) => addTaskToGoogleCal(options));
+
+program
+    .command('github <username>')
+    .aliases(['gh', 'git'])
+    .description('Displays your GitHub stats')
+    .action(githubStats);
 
 program.parse();

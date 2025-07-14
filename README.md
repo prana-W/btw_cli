@@ -1,6 +1,6 @@
 # btw_cli
 
-`btw_cli` (btw: *by-the-W*) is a simple and powerful **Command Line Interface (CLI)** designed to help you perform various useful tasks directly from your terminal.
+`btw_cli` (btw: _by-the-W_) is a simple and powerful **Command Line Interface (CLI)** designed to help you perform various useful tasks directly from your terminal.
 
 It streamlines productivity with quick commands for time tracking, task scheduling, and result viewing — all accessible without leaving your terminal.
 
@@ -59,7 +59,6 @@ NOTE: This has only been tested on **Ubuntu**.
 
 > 💡 Make sure you have Node.js (v20 or later) installed before running the setup.
 
-
 ---
 
 ## How to use btw_cli
@@ -73,14 +72,14 @@ btw <command>
 
 ### 🧰 Available Commands
 
-| Command              | Alias(es)         | Description                                                   |
-|----------------------|-------------------|---------------------------------------------------------------|
-| `time`               | `now`, `t`        | Displays the current time                                     |
-| `start-session`      | `start`, `ss`     | Starts and tracks a focused work session                      |
-| `end-session`        | `end`, `es`       | Ends the current session and shows the total duration         |
-| `session-history`    | `session-h`, `sh` | Shows the history of your last 5 work sessions                |
-| `result <roll>`      | –                 | Displays your academic result based on your roll number       |
-| `add-task`           | `calender`, `cal` | Adds a task to your Google Calendar                           |
+| Command           | Alias(es)         | Description                                             |
+| ----------------- | ----------------- | ------------------------------------------------------- |
+| `time`            | `now`, `t`        | Displays the current time                               |
+| `start-session`   | `start`, `ss`     | Starts and tracks a focused work session                |
+| `end-session`     | `end`, `es`       | Ends the current session and shows the total duration   |
+| `session-history` | `session-h`, `sh` | Shows the history of your last 5 work sessions          |
+| `result <roll>`   | –                 | Displays your academic result based on your roll number |
+| `add-task`        | `calender`, `cal` | Adds a task to your Google Calendar                     |
 
 ---
 
