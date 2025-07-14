@@ -1,6 +1,6 @@
 {
     "name": "btw_cli",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "btw_cli (btw: by-the-W) is a simple and powerful Command Line Interface (CLI) designed to help you perform various useful tasks directly from your terminal.",
     "keywords": [
         "cli",
@@ -25,8 +25,7 @@
     "main": "bin/index.js",
     "scripts": {
         "setup": "npm install && chmod +x bin/index.js && npm link",
-        "format": "npx prettier --write .",
-        "prepare": "husky install"
+        "format": "npx prettier --write ."
     },
     "bin": {
         "btw": "./bin/index.js"
@@ -44,8 +43,6 @@
         "puppeteer": "^24.12.1"
     },
     "devDependencies": {
-        "husky": "^8.0.0",
-        "prettier": "^3.6.2",
-        "pretty-quick": "^4.2.2"
+        "prettier": "^3.6.2"
     }
 }
