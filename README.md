@@ -18,7 +18,7 @@ Choose **one** of the following:
 
 #### 🔹 Option 1: Download Zip
 
-1. [Download the ZIP file](insert-link-here)
+1. [Download the ZIP file](https://github.com/prana-W/btw_cli/releases/download/v0.1.0-alpha/btw_cli_0.1.0-alpha.zip)
 2. Extract it to a location of your choice
 3. Open the extracted folder
 
@@ -37,6 +37,8 @@ git clone https://github.com/prana-W/btw_cli.git
 1. Go to the extracted/cloned `btw_cli` folder
 2. Simply **double-click** the file:  
    `setup_windows.bat`
+
+> ⚠️ NOTE: In case of warning saying `Windows protected your PC`, click on More info, swipe right and then click `Run Anyway`
 
 This will check your Node.js version and setup btw_cli.
 
