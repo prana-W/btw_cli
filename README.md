@@ -18,7 +18,7 @@ Choose **one** of the following:
 
 #### 🔹 Option 1: Download Zip
 
-1. [Download the ZIP file](https://github.com/prana-W/btw_cli/releases/download/v1.0.0/btw_cli_1.0.0.zip)
+1. [Download the ZIP file](https://github.com/prana-W/btw_cli/releases/download/v1.0.0/btw_cli_v1.0.0.zip) 
 2. Extract it to a location of your choice
 3. Open the extracted folder
 
