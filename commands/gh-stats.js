@@ -4,14 +4,18 @@ import {
     getGitHubOtherStats,
 } from '../lib/githubData/index.js';
 import chalk from 'chalk';
+import { oraPromise } from 'ora';
 
 export default async function ghStats(username) {
     try {
-        const response = await Promise.all([
-            getGitHubAPIData(username),
-            getGitHubStreak(username),
-            getGitHubOtherStats(username),
-        ]);
+        const response = await oraPromise(
+            Promise.all([
+                getGitHubAPIData(username),
+                getGitHubStreak(username),
+                getGitHubOtherStats(username),
+            ]),
+            'Fetching GitHub Stats...',
+        );
 
         const niceResponse = response.filter((element) => !!element);
 
@@ -27,7 +31,8 @@ export default async function ghStats(username) {
     } catch (err) {
         console.error(
             chalk.red(
-                'Error in fetching all GitHub stats! Check username and network connection.',
+                'Error encountered! Kindly check your username and network connection or try again later.',
+                err.message,
             ),
         );
     }
