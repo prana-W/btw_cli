@@ -8,7 +8,7 @@ import {
     sessionHistory,
     result,
     addEvent,
-    ghStats
+    ghStats,
 } from '../commands/index.js';
 
 program
@@ -60,7 +60,7 @@ program
     .command('add-event')
     .aliases(['calender', 'cal'])
     .description('Add an event in Google Calendar')
-    .action((options) => addEvent(options));
+    .action(addEvent);
 
 program
     .command('gh-stats <username>')

@@ -1,17 +1,34 @@
 import {
     getGitHubAPIData,
     getGitHubStreak,
-    getGitHubOtherStats
+    getGitHubOtherStats,
 } from '../lib/githubData/index.js';
+import chalk from 'chalk';
 
 export default async function ghStats(username) {
-    const response = await Promise.all([
+    try {
+        const response = await Promise.all([
             getGitHubAPIData(username),
             getGitHubStreak(username),
-        getGitHubOtherStats(username),
-    ]);
+            getGitHubOtherStats(username),
+        ]);
 
+        const niceResponse = response.filter((element) => !!element);
 
-    const niceResponse = response.filter(element => !!element )
-    console.log(niceResponse);
+        if (niceResponse.length !== 3) {
+            throw new Error('Not all data fetched successfully.');
+        }
+
+        const veryNiceResponse = {
+            'GitHub Account Stats': { ...niceResponse[0], ...niceResponse[1] },
+            'Most Used Languages': { ...niceResponse[2] },
+        };
+        console.log(veryNiceResponse);
+    } catch (err) {
+        console.error(
+            chalk.red(
+                'Error in fetching all GitHub stats! Check username and network connection.',
+            ),
+        );
+    }
 }

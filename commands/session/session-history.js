@@ -4,7 +4,7 @@ export default function sessionHistory() {
     const sessionHistory = sessionStore.get('sessionHistory') || [];
 
     !!sessionHistory &&
-    sessionHistory.map((session) => {
-        console.log(session);
-    });
+        sessionHistory.map((session) => {
+            console.log(session);
+        });
 }

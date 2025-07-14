@@ -2,7 +2,7 @@ import resultRemark from '../utils/resultRemark.js';
 import { oraPromise } from 'ora';
 import chalk from 'chalk';
 
-async function result(roll) {
+export default async function result(roll) {
     if (!roll || roll.length < 10) {
         console.error(chalk.red('Kindly enter a valid roll number!'));
         return;
@@ -35,5 +35,3 @@ async function result(roll) {
         console.error(chalk.red(err?.message || err));
     }
 }
-
-export default result;
