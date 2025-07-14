@@ -25,7 +25,8 @@
     "main": "bin/index.js",
     "scripts": {
         "setup": "npm install && chmod +x bin/index.js && npm link",
-        "format": "npx prettier --write ."
+        "format": "npx prettier --write .",
+        "prepare": "husky install"
     },
     "bin": {
         "btw": "./bin/index.js"
@@ -41,6 +42,8 @@
         "puppeteer": "^24.12.1"
     },
     "devDependencies": {
-        "prettier": "^3.6.2"
+        "husky": "^8.0.0",
+        "prettier": "^3.6.2",
+        "pretty-quick": "^4.2.2"
     }
 }

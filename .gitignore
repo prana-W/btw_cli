@@ -22,3 +22,7 @@ web_modules/
 !.env.example
 
 .temp
+
+.husky
+.idea
+
