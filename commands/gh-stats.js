@@ -2,9 +2,9 @@ import {
     getGitHubAPIData,
     getGitHubStreak,
     getGitHubOtherStats
-} from '../utils/githubData/index.js';
+} from '../lib/githubData/index.js';
 
-export default async function githubStats(username) {
+export default async function ghStats(username) {
     const response = await Promise.all([
             getGitHubAPIData(username),
             getGitHubStreak(username),

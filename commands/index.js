@@ -1,15 +1,15 @@
-import { currentTime } from './currentTime.js';
-import { startSession, endSession, sessionHistory } from './trackSession.js';
-import getResult from './getResult.js';
-import addTaskToGoogleCal from './addTaskToGoogleCal.js';
-import githubStats from './githubStats.js';
+import { time } from './time.js';
+import { startSession, endSession, sessionHistory } from './session/index.js';
+import result from './result.js';
+import addEvent from './add-event.js';
+import ghStats from './gh-stats.js';
 
 export {
-    currentTime,
+    time,
     startSession,
     endSession,
     sessionHistory,
-    getResult,
-    addTaskToGoogleCal,
-    githubStats,
+    result,
+    addEvent,
+    ghStats,
 };

@@ -2,14 +2,14 @@
 
 import { program } from 'commander';
 import {
-    currentTime,
+    time,
     startSession,
     endSession,
     sessionHistory,
-    getResult,
-    addTaskToGoogleCal,
-    githubStats
-} from './commands/index.js';
+    result,
+    addEvent,
+    ghStats
+} from '../commands/index.js';
 
 program
     .name('btw')
@@ -31,7 +31,7 @@ program
     .command('time')
     .aliases(['now', 't'])
     .description('Display the current time')
-    .action(currentTime);
+    .action(time);
 
 program
     .command('start-session')
@@ -54,18 +54,18 @@ program
 program
     .command('result <roll>')
     .description('Displays your result')
-    .action(getResult);
+    .action(result);
 
 program
-    .command('add-task')
+    .command('add-event')
     .aliases(['calender', 'cal'])
-    .description('Add a task in Google Calendar')
-    .action((options) => addTaskToGoogleCal(options));
+    .description('Add an event in Google Calendar')
+    .action((options) => addEvent(options));
 
 program
-    .command('github <username>')
+    .command('gh-stats <username>')
     .aliases(['gh', 'git'])
     .description('Displays your GitHub stats')
-    .action(githubStats);
+    .action(ghStats);
 
 program.parse();

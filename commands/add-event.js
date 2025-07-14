@@ -1,7 +1,7 @@
 import open from 'open';
 import dayjs from 'dayjs';
 import enquirer from 'enquirer';
-import { addTaskToGoogleCalPrompts as questions } from '../utils/prompts.js';
+import { addTaskToGoogleCalPrompts as questions } from '../lib/prompts.js';
 
 const { prompt } = enquirer;
 
@@ -17,7 +17,7 @@ function createRedirectLink({
     return `${baseUrl}&text=${encodeURIComponent(title)}&dates=${start}/${end}&details=${encodeURIComponent(description)}`;
 }
 
-export default async function addTaskToGoogleCal() {
+export default async function addEvent() {
     try {
         const answers = await prompt(questions);
 

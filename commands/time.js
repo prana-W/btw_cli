@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 
 // Displays the System time
-function currentTime() {
+function time() {
     console.log(`${chalk.cyanBright(new Date().toLocaleTimeString())}`);
 }
 
-export { currentTime };
+export { time };

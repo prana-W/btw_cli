@@ -22,13 +22,13 @@
     "license": "ISC",
     "author": "Pranaw Kumar",
     "type": "module",
-    "main": "index.js",
+    "main": "bin/index.js",
     "scripts": {
-        "setup": "npm install && chmod +x index.js && npm link",
+        "setup": "npm install && chmod +x bin/index.js && npm link",
         "format": "npx prettier --write ."
     },
     "bin": {
-        "btw": "./index.js"
+        "btw": "./bin/index.js"
     },
     "dependencies": {
         "chalk": "^5.4.1",
