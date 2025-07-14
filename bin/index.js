@@ -2,6 +2,7 @@
 
 import { program } from 'commander';
 import {
+    btw,
     time,
     startSession,
     endSession,
@@ -14,18 +15,10 @@ import {
 program
     .name('btw')
     .description(
-        'btw_cli, is a basic CLI Tool built by Pranaw Kumar for doing stuffs directly from the terminal!',
+        'btw_cli is a simple and powerful Command Line Interface (CLI) designed to help you perform various useful tasks directly from your terminal.',
     )
-    .version('0.1.0');
-
-program
-    .command('greet <name>')
-    .description('Greet someone')
-    .option('-u, --uppercase', 'Uppercase the name')
-    .action((name, options) => {
-        const message = options.uppercase ? name.toUpperCase() : name;
-        console.log(`Hello, ${message}!`);
-    });
+    .action(btw)
+    .version('0.1.0-alpha');
 
 program
     .command('time')
@@ -64,7 +57,7 @@ program
 
 program
     .command('gh-stats <username>')
-    .aliases(['gh', 'git'])
+    .aliases(['github', 'gh'])
     .description('Displays your GitHub stats')
     .action(ghStats);
 

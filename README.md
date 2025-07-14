@@ -18,7 +18,7 @@ Choose **one** of the following:
 
 #### 🔹 Option 1: Download Zip
 
-1. [Download the ZIP file](https://github.com/prana-W/btw_cli/releases/download/v0.1.0-alpha/btw_cli_0.1.0-alpha.zip)
+1. [Download the ZIP file](https://github.com/prana-W/btw_cli/releases/download/v1.0.0/btw_cli_1.0.0.zip)
 2. Extract it to a location of your choice
 3. Open the extracted folder
 
@@ -74,15 +74,31 @@ btw <command>
 
 ### 🧰 Available Commands
 
-| Command           | Alias(es)         | Description                                             |
-| ----------------- | ----------------- | ------------------------------------------------------- |
-| `time`            | `now`, `t`        | Displays the current time                               |
-| `start-session`   | `start`, `ss`     | Starts and tracks a focused work session                |
-| `end-session`     | `end`, `es`       | Ends the current session and shows the total duration   |
-| `session-history` | `session-h`, `sh` | Shows the history of your last 5 work sessions          |
-| `result <roll>`   | –                 | Displays your academic result based on your roll number |
-| `add-task`        | `calender`, `cal` | Adds a task to your Google Calendar                     |
+| Command               | Alias(es)         | Description                                             |
+| --------------------- | ----------------- | ------------------------------------------------------- |
+| `time`                | `now`, `t`        | Displays the current time                               |
+| `start-session`       | `start`, `ss`     | Starts and tracks a focused work session                |
+| `end-session`         | `end`, `es`       | Ends the current session and shows the total duration   |
+| `session-history`     | `session-h`, `sh` | Shows the history of your last 5 work sessions          |
+| `result <roll>`       | –                 | Displays your academic result based on your roll number |
+| `add-event`           | `calender`, `cal` | Adds an event to your Google Calendar                   |
+| `gh-stats <username>` | `github`, `gh`    | Display your GitHub Statistics                          |
 
 ---
 
 > 🛠️ More commands coming soon to supercharge your terminal productivity!
+
+## Technology Used
+
+- `Commander`: For building the CLI interface
+- `Enquirer`: For interactive prompts
+- `Chalk`: For styling the terminal output
+- `Ora`: For showing loading spinners
+- `Puppeteer`: For web scraping (e.g., fetching GitHub Stats)
+- `Conf`: For storing various data like session history
+- `DayJS`: For handling date and time operations
+- `Open`: For opening URLs in the default browser
+- `Figlet`: For adding ASCI art to the terminal output
+- `Gradient String`: For gradient-colored terminal output
+
+---

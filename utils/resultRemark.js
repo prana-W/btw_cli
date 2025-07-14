@@ -16,6 +16,6 @@ export default function restartSession(sgpa, cgpa, name) {
     }
 
     console.log(
-        `Hello, ${chalk.magenta(name)}! ${chalk.bold('Your SGPA:')} ${chalk.green(sgpa)} and ${chalk.bold('Your CGPA:')} ${chalk.green(cgpa)}\n${chalk.italic(remark)}`,
+        `Hello, ${chalk.magenta(name)}!\n${chalk.bold('Your SGPA:')} ${chalk.green(sgpa)} and ${chalk.bold('Your CGPA:')} ${chalk.green(cgpa)}\n${chalk.italic(remark)}`,
     );
 }

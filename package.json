@@ -37,6 +37,8 @@
         "conf": "^14.0.0",
         "dayjs": "^1.11.13",
         "enquirer": "^2.4.1",
+        "figlet": "^1.8.2",
+        "gradient-string": "^3.0.0",
         "open": "^10.1.2",
         "ora": "^8.2.0",
         "puppeteer": "^24.12.1"
