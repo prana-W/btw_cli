@@ -31,8 +31,7 @@ export default async function ghStats(username) {
     } catch (err) {
         console.error(
             chalk.red(
-                'Error encountered! Kindly check your username and network connection or try again later.',
-                err.message,
+                'Error encountered! Kindly check your username and network connection or try again later.'
             ),
         );
     }

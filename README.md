@@ -39,6 +39,7 @@ git clone https://github.com/prana-W/btw_cli.git
    `setup_windows.bat`
 
 > ⚠️ NOTE: In case of warning saying `Windows protected your PC`, click on More info, swipe right and then click `Run Anyway`
+
 > P.S: Setup might take several minutes. Be Patient!
 
 This will check your Node.js version and setup btw_cli.
@@ -57,6 +58,7 @@ npm run setup
 Node version will be checked automatically and btw_cli will be setup.
 
 > NOTE: This has only been tested on **Ubuntu**.
+
 > P.S: Setup might take several minutes. Be Patient!
 
 ---
