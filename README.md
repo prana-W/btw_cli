@@ -106,3 +106,73 @@ btw <command>
 - `Gradient String`: For gradient-colored terminal output
 
 ---
+
+## 📦 Contributing
+
+We welcome contributions to this CLI tool! Follow the steps below to get started:
+
+### 🛠️ Setup Instructions
+
+1. **Fork and Clone** this repository:
+   ```bash
+   git clone https://github.com/prana-w/btw_cli.git
+   cd btw_cli
+   ```
+
+2. **Create a new branch**:
+   ```bash
+   git checkout -b your-feature-branch
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+4. **Run setup script**:
+   - On **Windows**:
+     ```bash
+     ./setup_windows.bat
+     ```
+   - On **Linux/macOS**:
+     ```bash
+     npm run setup
+     ```
+
+---
+
+### ✨ What You Can Contribute
+
+- New features
+- Bug fixes
+- Code cleanup
+- Documentation improvements
+
+Before starting major changes, it is **recommended to [open an issue](https://github.com/prana-w/btw_cli/issues)** and discuss your ideas first.
+
+---
+
+### ✅ Submitting a Pull Request
+
+1. Commit your changes:
+   ```bash
+   git add .
+   git commit -m "Add: your feature/fix description"
+   ```
+
+2. Push your branch:
+   ```bash
+   git push origin your-feature-branch
+   ```
+
+3. Open a **Pull Request** from your fork to the `main` branch of this repository.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+© 2025 Pranaw Kumar
+
+---
