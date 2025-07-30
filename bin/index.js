@@ -11,7 +11,7 @@ import {
     addEvent,
     ghStats,
     attendance,
-    setSap
+    setSap,
 } from '../commands/index.js';
 
 program

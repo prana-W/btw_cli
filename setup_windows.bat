@@ -3,7 +3,7 @@ cd /d %~dp0
 setlocal enabledelayedexpansion
 
 echo ========================================
-echo btw_cli Setup Starting...
+echo btw_cli Setup Starting for Windows...
 echo ========================================
 
 REM Step 1: Check Node.js version

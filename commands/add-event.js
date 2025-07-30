@@ -2,6 +2,7 @@ import open from 'open';
 import dayjs from 'dayjs';
 import enquirer from 'enquirer';
 import { addTaskToGoogleCalPrompts as questions } from '../lib/prompts.js';
+import chalk from 'chalk';
 
 const { prompt } = enquirer;
 
@@ -45,6 +46,6 @@ export default async function addEvent() {
 
         console.log('Kindly confirm the details in your browser.');
     } catch (err) {
-        console.error(err?.message || err);
+        console.error(chalk.red(err?.message || err));
     }
 }

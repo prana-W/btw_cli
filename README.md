@@ -98,7 +98,7 @@ btw <command>
 - `Enquirer`: For interactive prompts
 - `Chalk`: For styling the terminal output
 - `Ora`: For showing loading spinners
-- `Puppeteer`: For web scraping (e.g., fetching GitHub Stats)
+- `Puppeteer`: For web scraping (e.g., GitHub stats, attendance Data)
 - `Conf`: For storing various data like session history
 - `DayJS`: For handling date and time operations
 - `Open`: For opening URLs in the default browser
@@ -114,30 +114,33 @@ We welcome contributions to this CLI tool! Follow the steps below to get started
 ### 🛠️ Setup Instructions
 
 1. **Fork and Clone** this repository:
-   ```bash
-   git clone https://github.com/prana-w/btw_cli.git
-   cd btw_cli
-   ```
+
+    ```bash
+    git clone https://github.com/prana-w/btw_cli.git
+    cd btw_cli
+    ```
 
 2. **Create a new branch**:
-   ```bash
-   git checkout -b your-feature-branch
-   ```
+
+    ```bash
+    git checkout -b your-feature-branch
+    ```
 
 3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+
+    ```bash
+    npm install
+    ```
 
 4. **Run setup script**:
-   - On **Windows**:
-     ```bash
-     ./setup_windows.bat
-     ```
-   - On **Linux/macOS**:
-     ```bash
-     npm run setup
-     ```
+    - On **Windows**:
+        ```bash
+        ./setup_windows.bat
+        ```
+    - On **Linux/macOS**:
+        ```bash
+        npm run setup
+        ```
 
 ---
 
@@ -155,15 +158,17 @@ Before starting major changes, it is **recommended to [open an issue](https://gi
 ### ✅ Submitting a Pull Request
 
 1. Commit your changes:
-   ```bash
-   git add .
-   git commit -m "Add: your feature/fix description"
-   ```
+
+    ```bash
+    git add .
+    git commit -m "Add: your feature/fix description"
+    ```
 
 2. Push your branch:
-   ```bash
-   git push origin your-feature-branch
-   ```
+
+    ```bash
+    git push origin your-feature-branch
+    ```
 
 3. Open a **Pull Request** from your fork to the `main` branch of this repository.
 

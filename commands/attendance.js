@@ -3,24 +3,29 @@ import chalk from 'chalk';
 import attendanceData from '../lib/getAttendanceData.js';
 
 export default async function attendance() {
-    if (!sapStore.get('sapUsername') || !sapStore.get('sapPassword')) {
-        console.log(
-            chalk.red(
-                'Please set your SAP credentials first using the `btw set-sap` command.',
-            ),
-        );
-        return;
-    }
+    try {
+        const username = sapStore.get('username');
+        const password = sapStore.get('password');
 
-    const timeDifference =
-        (sapStore.get('lastUpdated') - Date.now()) / (1000 * 60 * 60); // in hours
+        if (!username || !password) {
+            console.log(
+                chalk.red(
+                    'Please set your SAP credentials first using the `btw set-sap` command.',
+                ),
+            );
+            return;
+        }
 
-    if (timeDifference < 24) {
-        // display the saved data
-        return;
-    }
+        const timeDifference =
+            (sapStore.get('lastUpdated') - Date.now()) / (1000 * 60 * 60); // in hours
 
-    // Fetch the Attendance Data again from the website
+        if (timeDifference < 24) {
+            // display the saved data
+            return;
+        }
 
-    const attendanceData = await attendanceData();
+        // Fetch the Attendance Data again from the website
+
+        const response = await attendanceData(username, password);
+    } catch (err) {}
 }
