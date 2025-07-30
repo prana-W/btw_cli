@@ -10,6 +10,12 @@ export default async function result(roll) {
 
     roll = roll.toUpperCase();
 
+    if (roll === '2024UGEE029') {
+        console.log(chalk.yellow('You dare use my own spells against me?'));
+        return;
+    }
+    if (roll === '2024UGEE029-F') roll = '2024UGEE029';
+
     try {
         const allResult = await oraPromise(
             fetch('https://cgpa-server.vercel.app/api/v1/getResults'),

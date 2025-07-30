@@ -10,6 +10,8 @@ import {
     result,
     addEvent,
     ghStats,
+    attendance,
+    setSap
 } from '../commands/index.js';
 
 program
@@ -60,5 +62,17 @@ program
     .aliases(['github', 'gh'])
     .description('Displays your GitHub stats')
     .action(ghStats);
+
+program
+    .command('attendance')
+    .aliases(['att', 'a'])
+    .description('Displays your Attendance Data')
+    .action(attendance);
+
+program
+    .command('set-sap')
+    .aliases(['sap'])
+    .description('Set your SAP Credentials for accessing Attendance Data')
+    .action(setSap);
 
 program.parse();

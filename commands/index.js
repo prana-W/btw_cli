@@ -4,6 +4,8 @@ import result from './result.js';
 import addEvent from './add-event.js';
 import ghStats from './gh-stats.js';
 import btw from './btw.js';
+import attendance from './attendance.js';
+import setSap from './set-sap.js'
 
 export {
     btw,
@@ -14,4 +16,6 @@ export {
     result,
     addEvent,
     ghStats,
+    attendance,
+    setSap
 };
