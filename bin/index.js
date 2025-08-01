@@ -44,7 +44,7 @@ program
         'btw_cli is a simple and powerful Command Line Interface (CLI) designed to help you perform various useful tasks directly from your terminal.',
     )
     .action(btw)
-    .version('1.0.0');
+    .version(pkg.version);
 
 program
     .command('time')
