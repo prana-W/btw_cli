@@ -72,7 +72,7 @@ export default async function attendance() {
         console.log(
             chalk.red('Note: ') +
                 chalk.dim(
-                    'In case of visual issues, please try resizing your terminal window.',
+                    'In case of visual issues, please try resizing your terminal window!',
                 ),
         );
     } catch (err) {

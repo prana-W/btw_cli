@@ -43,7 +43,8 @@
         "gradient-string": "^3.0.0",
         "open": "^10.1.2",
         "ora": "^8.2.0",
-        "puppeteer": "^24.12.1"
+        "puppeteer": "^24.12.1",
+        "update-notifier": "^7.3.1"
     },
     "devDependencies": {
         "prettier": "^3.6.2"

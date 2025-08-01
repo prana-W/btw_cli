@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+import updateNotifier from 'update-notifier';
+import { prompt } from 'enquirer';
+import pkg from '../package.json' with { type: 'json' };
 import { program } from 'commander';
 import {
     btw,
@@ -13,6 +16,27 @@ import {
     attendance,
     setSap,
 } from '../commands/index.js';
+
+const notifier = updateNotifier({ pkg });
+
+if (notifier.update) {
+    const { shouldUpdate } = await prompt({
+        type: 'confirm',
+        name: 'shouldUpdate',
+        message: `A new version (${notifier.update.latest}) is available! You’re on ${notifier.update.current}. Do you want to update now?`,
+    });
+
+    if (shouldUpdate) {
+        const { execSync } = await import('child_process');
+        try {
+            execSync(`npm install -g ${pkg.name}`, { stdio: 'inherit' });
+            console.log('✅ Successfully updated. Please rerun the command.');
+            process.exit(0);
+        } catch (err) {
+            console.error('❌ Update failed. Try running manually: npm i -g', pkg.name);
+        }
+    }
+}
 
 program
     .name('btw')
