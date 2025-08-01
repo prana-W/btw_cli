@@ -1,6 +1,6 @@
 # btw_cli
 
-`btw_cli` (btw: _by-the-W_) is a simple and powerful **Command Line Interface (CLI)** designed to help you perform various useful tasks directly from your terminal.
+`btw_cli` (btw: _by-the-W_) is a simple and powerful **Command Line Interface (CLI)** designed to help students of National Institute of Technology, Jamshedpur perform various useful tasks directly from your terminal like checking result, attendance, GitHub stats, adding events to Google Calendar, and managing work sessions.
 
 It streamlines productivity with quick commands for time tracking, task scheduling, and result viewing — all accessible without leaving your terminal.
 
@@ -69,7 +69,7 @@ Node version will be checked automatically and btw_cli will be setup.
 
 ## How to use btw_cli
 
-To use any command, make sure you’ve followed the **[Setup Guide](#project-setup-guide)** once.  
+To use any command, make sure you’ve followed the **[Setup Guide](#-installation-and-setup-guide)** once.  
 After that, you can run any command from **any terminal** by typing:
 
 ```bash
@@ -79,7 +79,7 @@ btw <command>
 ### 🧰 Available Commands
 
 | Command               | Alias(es)         | Description                                             |
-| --------------------- | ----------------- | ------------------------------------------------------- |
+|-----------------------|-------------------|---------------------------------------------------------|
 | `time`                | `now`, `t`        | Displays the current time                               |
 | `start-session`       | `start`, `ss`     | Starts and tracks a focused work session                |
 | `end-session`         | `end`, `es`       | Ends the current session and shows the total duration   |
@@ -87,6 +87,8 @@ btw <command>
 | `result <roll>`       | –                 | Displays your academic result based on your roll number |
 | `add-event`           | `calender`, `cal` | Adds an event to your Google Calendar                   |
 | `gh-stats <username>` | `github`, `gh`    | Display your GitHub Statistics                          |
+| `set-sap`             | `sap`             | Set SAP credentials for checking Attendance             |
+| `attendance`          | `att`             | Displays the attendance in a tabular format             |
 
 ---
 
@@ -104,6 +106,7 @@ btw <command>
 - `Open`: For opening URLs in the default browser
 - `Figlet`: For adding ASCI art to the terminal output
 - `Gradient String`: For gradient-colored terminal output
+- `Cli Table3`: For displaying Attendance data in a tabular format
 
 ---
 
@@ -173,6 +176,13 @@ Before starting major changes, it is **recommended to [open an issue](https://gi
 3. Open a **Pull Request** from your fork to the `main` branch of this repository.
 
 ---
+
+## Coming up
+
+- Check class-skip-limit and classes-required similar to [Attendance Seeker](https://github.com/prana-W/Attendance-Seeker)
+- Save important information like wifi-credentials, email password and much more locally through terminal, which can be accessed later using a unique password
+- Display upcoming events of NIT Jamshedpur like exams, fests, etc. in the calendar
+___
 
 ## 📄 License
 
