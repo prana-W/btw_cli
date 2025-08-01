@@ -5,16 +5,17 @@ import CliTable3 from 'cli-table3';
 import { oraPromise } from 'ora';
 
 const table = new CliTable3({
-    head: [
-        'Subject Code',
-        'Subject Name',
-        'Faculty Name',
-        'Total Classes',
-        'Attendance(%)',
-    ]
+    head: ['Sub. Code', 'Subject', 'Classes', 'Attendance(%)'],
+    style: {
+        compact: true,
+    },
 });
 
-const userDataTable = new CliTable3();
+const userDataTable = new CliTable3({
+    style: {
+        compact: true,
+    },
+});
 
 export default async function attendance() {
     try {
@@ -33,24 +34,31 @@ export default async function attendance() {
         const timeDifference =
             (sapStore.get('lastUpdated') - Date.now()) / (1000 * 60 * 60); // in hours
 
-        if (timeDifference < 24) {
-            //todo: display the saved data
-            return;
+        let response;
+
+        // Display the last saved data if request is made within an hour
+        if (timeDifference < 1) {
+            response = sapStore.get('attendanceData');
+        } else {
+            // Fetch the Attendance Data again from the website and store it for use within 24 hours
+
+            response = await oraPromise(
+                attendanceData(username, password),
+                'Fetching Attendance Data...',
+            );
+
+            sapStore.set('attendanceData', response);
+            sapStore.set('lastUpdated', Date.now());
         }
-
-        // Fetch the Attendance Data again from the website
-
-        const response = await oraPromise(attendanceData(username, password), 'Fetching Attendance Data...');
 
         userDataTable.push(
             {
                 'Roll Number': response[0].roll,
             },
             { Date: response[0].date },
-            { 'Current Time': response[0].current_time },
+            { 'Last Updated': response[0].current_time },
         );
         console.log(userDataTable.toString());
-
 
         response.shift();
 
@@ -61,7 +69,15 @@ export default async function attendance() {
 
         console.log(table.toString());
 
+        console.log(
+            chalk.red('Note: ') +
+                chalk.dim(
+                    'In case of visual issues, please try resizing your terminal window.',
+                ),
+        );
     } catch (err) {
         console.error(chalk.red(err?.message || err));
     }
 }
+
+// if you seeing this, dm me anywhere to win 25rs!!
