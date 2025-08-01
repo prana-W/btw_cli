@@ -32,6 +32,7 @@
     },
     "dependencies": {
         "chalk": "^5.4.1",
+        "cli-table3": "^0.6.5",
         "commander": "^14.0.0",
         "conf": "^14.0.0",
         "dayjs": "^1.11.13",
