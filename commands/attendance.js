@@ -38,7 +38,6 @@ export default async function attendance() {
 
         // Display the last saved data if request is made within an hour
         if (timeDifference < 1) {
-            console.log(timeDifference);
             response = sapStore.get('attendanceData');
         } else {
             // Fetch the Attendance Data again from the website and store it for use within 24 hours
