@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import updateNotifier from 'update-notifier';
-import { prompt } from 'enquirer';
+import enquirer from 'enquirer';
 import pkg from '../package.json' with { type: 'json' };
 import { program } from 'commander';
 import {
@@ -18,6 +18,8 @@ import {
 } from '../commands/index.js';
 
 const notifier = updateNotifier({ pkg });
+
+const {prompt} = enquirer;
 
 if (notifier.update) {
     const { shouldUpdate } = await prompt({
