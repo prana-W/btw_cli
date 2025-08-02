@@ -6,11 +6,30 @@ It streamlines productivity with quick commands for time tracking, task scheduli
 
 ---
 
-## ⚙️ Installation and Setup Guide
+## ⚙️ Installation
 
-Follow these steps to set up the btw_cli on your machine.
+### 🚀 Quick Global Install (Recommended for Users)
+
+To install `btw_cli` globally and use it from **anywhere** in your terminal:
+
+```bash
+npm i -g @prana-w/btw
+```
+
+That’s it. You’re ready to go!
+
+> Run commands like `btw result <roll>` or `btw add-event` right from your terminal.  
+> 🔍 See [Available Commands](#-available-commands) for the full list.
 
 ---
+
+### 🧪 Local Setup for Testing/Contributing (For Developers Only)
+
+If you want to **experiment locally**, test features, or contribute to development — follow the detailed setup instructions below for **Windows** or **Linux** systems.
+
+---
+
+## 🔧 Installation and Setup Guide
 
 ### Step 1: Download or Clone the Project
 
@@ -35,78 +54,70 @@ git clone https://github.com/prana-W/btw_cli.git
 #### 🪟 For Windows
 
 1. Go to the extracted/cloned `btw_cli` folder
-2. Simply **double-click** the file:  
-   `setup_windows.bat`
+2. Simply **double-click** the file: `setup_windows.bat`
 
-> ⚠️ NOTE: In case of warning saying `Windows protected your PC`, click on More info, swipe right and then click `Run Anyway`
-
-> P.S: Setup might take several minutes. Be Patient!
-
-This will check your Node.js version and setup btw_cli.
+> ⚠️ In case of a warning saying “Windows protected your PC”, click **More info**, swipe left, then **Run Anyway**  
+> ⏳ Setup might take several minutes — be patient!
 
 ---
 
 #### 🐧 For Linux
 
-1. Open extracted/cloned `btw_cli` folder in your terminal
+1. Open the extracted/cloned `btw_cli` folder in your terminal
 2. Run the following command:
 
 ```bash
 npm run setup
 ```
 
-Node version will be checked automatically and btw_cli will be setup.
-
-> NOTE: This has only been tested on **Ubuntu**.
-
-> P.S: Setup might take several minutes. Be Patient!
+> ⚠️ Tested only on Ubuntu  
+> ⏳ Setup might take several minutes — be patient!
 
 ---
 
-> 💡 Make sure you have Node.js (v20 or later) installed before running the setup.
+> 💡 **Make sure you have Node.js (v20 or later) installed before running the setup**
 
 ---
 
-## How to use btw_cli
+## 🧰 How to Use
 
-To use any command, make sure you’ve followed the **[Setup Guide](#-installation-and-setup-guide)** once.  
-After that, you can run any command from **any terminal** by typing:
+Once installed, you can run commands like:
 
 ```bash
 btw <command>
 ```
 
-### 🧰 Available Commands
+---
+
+## 🗂️ Available Commands
 
 | Command               | Alias(es)         | Description                                             |
-|-----------------------|-------------------|---------------------------------------------------------|
+| --------------------- | ----------------- | ------------------------------------------------------- |
 | `time`                | `now`, `t`        | Displays the current time                               |
 | `start-session`       | `start`, `ss`     | Starts and tracks a focused work session                |
 | `end-session`         | `end`, `es`       | Ends the current session and shows the total duration   |
 | `session-history`     | `session-h`, `sh` | Shows the history of your last 5 work sessions          |
 | `result <roll>`       | –                 | Displays your academic result based on your roll number |
 | `add-event`           | `calender`, `cal` | Adds an event to your Google Calendar                   |
-| `gh-stats <username>` | `github`, `gh`    | Display your GitHub Statistics                          |
-| `set-sap`             | `sap`             | Set SAP credentials for checking Attendance             |
-| `attendance`          | `att`             | Displays the attendance in a tabular format             |
+| `gh-stats <username>` | `github`, `gh`    | Displays your GitHub Statistics                         |
+| `set-sap`             | `sap`             | Set SAP credentials for checking attendance             |
+| `attendance`          | `att`, `a`        | Displays attendance in a tabular format                 |
 
 ---
 
-> 🛠️ More commands coming soon to supercharge your terminal productivity!
-
-## Technology Used
+## 🛠️ Technology Used
 
 - `Commander`: For building the CLI interface
 - `Enquirer`: For interactive prompts
 - `Chalk`: For styling the terminal output
 - `Ora`: For showing loading spinners
-- `Puppeteer`: For web scraping (e.g., GitHub stats, attendance Data)
+- `Puppeteer`: For web scraping (e.g., GitHub stats, attendance)
 - `Conf`: For storing various data like session history
-- `DayJS`: For handling date and time operations
+- `DayJS`: For date and time handling
 - `Open`: For opening URLs in the default browser
-- `Figlet`: For adding ASCI art to the terminal output
+- `Figlet`: For adding ASCII art to terminal output
 - `Gradient String`: For gradient-colored terminal output
-- `Cli Table3`: For displaying Attendance data in a tabular format
+- `Cli Table3`: For tabular display in terminal
 
 ---
 
@@ -118,32 +129,36 @@ We welcome contributions to this CLI tool! Follow the steps below to get started
 
 1. **Fork and Clone** this repository:
 
-    ```bash
-    git clone https://github.com/prana-w/btw_cli.git
-    cd btw_cli
-    ```
+```bash
+git clone https://github.com/prana-W/btw_cli.git
+cd btw_cli
+```
 
 2. **Create a new branch**:
 
-    ```bash
-    git checkout -b your-feature-branch
-    ```
+```bash
+git checkout -b your-feature-branch
+```
 
 3. **Install dependencies**:
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+```
 
 4. **Run setup script**:
-    - On **Windows**:
-        ```bash
-        ./setup_windows.bat
-        ```
-    - On **Linux/macOS**:
-        ```bash
-        npm run setup
-        ```
+
+- On **Windows**:
+
+```bash
+./setup_windows.bat
+```
+
+- On **Linux/macOS**:
+
+```bash
+npm run setup
+```
 
 ---
 
@@ -154,7 +169,7 @@ We welcome contributions to this CLI tool! Follow the steps below to get started
 - Code cleanup
 - Documentation improvements
 
-Before starting major changes, it is **recommended to [open an issue](https://github.com/prana-w/btw_cli/issues)** and discuss your ideas first.
+Before starting major changes, it is **recommended to [open an issue](https://github.com/prana-W/btw_cli/issues)** and discuss your ideas first.
 
 ---
 
@@ -162,32 +177,32 @@ Before starting major changes, it is **recommended to [open an issue](https://gi
 
 1. Commit your changes:
 
-    ```bash
-    git add .
-    git commit -m "Add: your feature/fix description"
-    ```
+```bash
+git add .
+git commit -m "Add: your feature/fix description"
+```
 
 2. Push your branch:
 
-    ```bash
-    git push origin your-feature-branch
-    ```
+```bash
+git push origin your-feature-branch
+```
 
 3. Open a **Pull Request** from your fork to the `main` branch of this repository.
 
 ---
 
-## Coming up
+## 🚧 Coming Up
 
-- Check class-skip-limit and classes-required similar to [Attendance Seeker](https://github.com/prana-W/Attendance-Seeker)
-- Save important information like wifi-credentials, email password and much more locally through terminal, which can be accessed later using a unique password
-- Display upcoming events of NIT Jamshedpur like exams, fests, etc. in the calendar
-___
+- Check class skip limit and classes required (like [Attendance Seeker](https://github.com/prana-W/Attendance-Seeker))
+- Save credentials like WiFi/email passwords securely via terminal with a master key
+- Display upcoming NIT Jamshedpur events like exams, fests, etc., in calendar
+
+---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
-
+This project is licensed under the [MIT License](LICENSE).  
 © 2025 Pranaw Kumar
 
 ---

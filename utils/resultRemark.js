@@ -1,21 +1,45 @@
 import chalk from 'chalk';
+import CliTable3 from 'cli-table3';
+
+const attendanceTable = new CliTable3({
+    style: {
+        compact: true,
+    },
+});
 
 // Comments on your Result because why not?!
 export default function restartSession(sgpa, cgpa, name) {
     let remark = null;
-    if (cgpa >= 9.5) {
-        remark = 'send me notes... Quick!';
-    } else if (cgpa >= 8 && cgpa < 9.5) {
-        remark = "Keep it up! You're doing great!";
+    if (cgpa >= 9) {
+        remark = 'touch grass!';
+    } else if (cgpa >= 8.5 && cgpa < 9) {
+        remark = 'i bet you want 9+';
+    } else if (cgpa >= 8 && cgpa < 8.5) {
+        remark = 'you are in safe zone!';
     } else if (cgpa >= 7 && cgpa < 8) {
-        remark = "Just a bit more efforts! You're almost there!";
-    } else if (cgpa < 6) {
+        remark = 'skills >>> cgpa, hehehe';
+    } else if (cgpa >= 6 && cgpa < 7) {
+        remark = 'you can do better';
+    } else if (cgpa < 6 && cgpa > 0) {
         remark = 'go study now!';
+    } else if (cgpa === 0) {
+        remark = 'no comments...';
     } else {
         remark = 'Invalid CGPA value.';
     }
 
-    console.log(
-        `Hello, ${chalk.magenta(name)}!\n${chalk.bold('Your SGPA:')} ${chalk.green(sgpa)} and ${chalk.bold('Your CGPA:')} ${chalk.green(cgpa)}\n${chalk.italic(remark)}`,
+    attendanceTable.push(
+        {
+            Name: name,
+        },
+        {
+            SGPA: chalk.bold(sgpa),
+        },
+        {
+            CGPA: chalk.bold(cgpa),
+        },
     );
+
+    console.log(attendanceTable.toString());
+    console.log(chalk.italic(remark));
 }

@@ -19,7 +19,7 @@ import {
 
 const notifier = updateNotifier({ pkg });
 
-const {prompt} = enquirer;
+const { prompt } = enquirer;
 
 if (notifier.update) {
     const { shouldUpdate } = await prompt({
@@ -35,7 +35,10 @@ if (notifier.update) {
             console.log('✅ Successfully updated. Please rerun the command.');
             process.exit(0);
         } catch (err) {
-            console.error('❌ Update failed. Try running manually: npm i -g', pkg.name);
+            console.error(
+                '❌ Update failed. Try running manually: npm i -g',
+                pkg.name,
+            );
         }
     }
 }
