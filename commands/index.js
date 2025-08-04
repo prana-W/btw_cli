@@ -19,5 +19,5 @@ export {
     ghStats,
     attendance,
     setSap,
-    codeforces
+    codeforces,
 };

@@ -1,40 +1,43 @@
 import chalk from 'chalk';
-import {codeforcesApiUrl} from '../constants/index.js';
+import upcomingContests from '../lib/codeforces/upcomingContests.js';
+import { oraPromise } from 'ora';
+import CliTable3 from 'cli-table3';
+
+const table = new CliTable3({
+    head: ['Contest', 'Date and Time'],
+});
 
 export default async function codeforces(username, options) {
     if (options?.stats && !username) {
         console.error(chalk.red('Username is required to view stats!'));
         return;
+    } else if (!options && !username) {
+        console.log('Run `btw codeforces -h` to see available options.');
     }
 
     // Fetches all the contests that have a negative relativeTimeSeconds, that is, which are yet to occur, meaning upcoming contests
     try {
         if (options?.contests) {
+            const upcomingContestsResponse = await oraPromise(
+                upcomingContests(),
+                'Fetching upcoming contests...',
+            );
 
-            const response = await fetch(`${codeforcesApiUrl}/contest.list`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch upcoming contests. Kindly check your network or try again later.');
-            }
-            const allContests = (await response.json())?.result;
-            // console.log(allContests);
+            upcomingContestsResponse.forEach((contest) => {
+                const data = [contest.name, contest.date];
+                table.push(data);
+            });
 
-            let upcomingContests = [];
-
-            let index = 0;
-
-            while (allContests[index]?.relativeTimeSeconds <= 0) {
-                upcomingContests.push(allContests[index]);
-                index++;
-            }
-
-            console.log(upcomingContests);
-
+            console.log('\n' + table.toString());
+            console.log(
+                chalk.dim.bold('\nNote: ') +
+                    chalk.dim.italic(
+                        'In case of visual issues, try resizing your terminal window!',
+                    ),
+            );
         }
-    }
-    catch (err) {
+    } catch (err) {
         console.error(chalk.red(err?.message || err));
         return;
     }
-
-
 }

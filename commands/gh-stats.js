@@ -7,7 +7,6 @@ import chalk from 'chalk';
 import { oraPromise } from 'ora';
 
 export default async function ghStats(username) {
-
     if (!username) {
         console.error(chalk.red('Kindly enter a valid username!'));
         return;

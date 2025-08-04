@@ -15,7 +15,7 @@ import {
     ghStats,
     attendance,
     setSap,
-    codeforces
+    codeforces,
 } from '../commands/index.js';
 
 const notifier = updateNotifier({ pkg });
@@ -108,8 +108,9 @@ program
 program
     .command('codeforces [username]')
     .aliases(['cf'])
-    .option('-c, --contests', 'Upcoming contests')
-    .option('-s, --stats', 'Stats')
+    .option('-c, --contests', 'Check upcoming contests')
+    .option('-s, --stats', 'Check profile Stats')
+    .description('View upcoming contests and stats on Codeforces')
     .action(codeforces);
 
 program.parse(process.argv);

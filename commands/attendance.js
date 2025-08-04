@@ -58,7 +58,7 @@ export default async function attendance() {
             { Date: response[0].date },
             { 'Last Updated': response[0].current_time },
         );
-        console.log(userDataTable.toString());
+        console.log('\n' + userDataTable.toString());
 
         response.shift();
 
@@ -70,9 +70,9 @@ export default async function attendance() {
         console.log(table.toString());
 
         console.log(
-            chalk.red('Note: ') +
-                chalk.dim(
-                    'In case of visual issues, please try resizing your terminal window!',
+            chalk.dim.bold('\nNote: ') +
+                chalk.dim.italic(
+                    'In case of visual issues, try resizing your terminal window!',
                 ),
         );
     } catch (err) {
