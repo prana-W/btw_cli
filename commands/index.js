@@ -6,6 +6,7 @@ import ghStats from './gh-stats.js';
 import btw from './btw.js';
 import attendance from './attendance.js';
 import setSap from './set-sap.js';
+import codeforces from './codeforces.js';
 
 export {
     btw,
@@ -18,4 +19,5 @@ export {
     ghStats,
     attendance,
     setSap,
+    codeforces
 };

@@ -15,6 +15,7 @@ import {
     ghStats,
     attendance,
     setSap,
+    codeforces
 } from '../commands/index.js';
 
 const notifier = updateNotifier({ pkg });
@@ -104,4 +105,11 @@ program
     .description('Set your SAP Credentials for accessing Attendance Data')
     .action(setSap);
 
-program.parse();
+program
+    .command('codeforces [username]')
+    .aliases(['cf'])
+    .option('-c, --contests', 'Upcoming contests')
+    .option('-s, --stats', 'Stats')
+    .action(codeforces);
+
+program.parse(process.argv);
