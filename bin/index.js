@@ -76,7 +76,7 @@ program
     .action(sessionHistory);
 
 program
-    .command('result <roll>')
+    .command('result [roll]')
     .description('Displays your result')
     .action(result);
 
@@ -87,7 +87,7 @@ program
     .action(addEvent);
 
 program
-    .command('gh-stats <username>')
+    .command('gh-stats [username]')
     .aliases(['github', 'gh'])
     .description('Displays your GitHub stats')
     .action(ghStats);

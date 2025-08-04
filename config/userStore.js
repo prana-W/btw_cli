@@ -1,0 +1,1 @@
+// Store user details and preferences automatically to use in the future

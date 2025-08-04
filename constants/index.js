@@ -5,3 +5,4 @@ export const githubApiUrl = 'https://api.github.com/users';
 export const sapHomePageUrl = 'https://online.nitjsr.ac.in/endsem/Login.aspx';
 export const attendancePageUrl =
     'https://online.nitjsr.ac.in/endsem/StudentAttendance/ClassAttendance.aspx';
+export const codeforcesApiUrl = 'https://codeforces.com/api';
