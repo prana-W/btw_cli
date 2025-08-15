@@ -1,6 +1,6 @@
 {
     "name": "@prana-w/btw",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "btw_cli (btw: by-the-W) is a simple and powerful Command Line Interface (CLI) designed to help you perform various useful tasks directly from your terminal.",
     "keywords": [
         "cli",
