@@ -18,7 +18,7 @@ import {
     codeforces,
     setLink,
     showLink,
-    openLink
+    openLink,
 } from '../commands/index.js';
 
 const notifier = updateNotifier({ pkg });
@@ -113,7 +113,7 @@ program
     .aliases(['cf'])
     .option('-c, --contests', 'Check upcoming contests')
     .option('-s, --stats', 'Check profile Stats')
-    .option('-t, --today', 'Check today\'s solved problems status')
+    .option('-t, --today', "Check today's solved problems status")
     .description('View upcoming contests and stats on Codeforces')
     .action(codeforces);
 
@@ -121,13 +121,12 @@ program
     .command('set-link <key> <value>')
     .aliases(['sl'])
     .description('Set a shortcut for a URL')
-    .action(setLink)
+    .action(setLink);
 
 program
     .command('show-links')
     .description('Shows all the quick links')
     .action(showLink);
-
 
 program
     .command('open-link <name>')

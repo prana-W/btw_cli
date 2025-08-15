@@ -7,7 +7,7 @@ import btw from './btw.js';
 import attendance from './attendance.js';
 import setSap from './set-sap.js';
 import codeforces from './codeforces.js';
-import {setLink, showLink, openLink} from './quick-link/index.js'
+import { setLink, showLink, openLink } from './quick-link/index.js';
 
 export {
     btw,
@@ -23,5 +23,5 @@ export {
     codeforces,
     setLink,
     showLink,
-    openLink
+    openLink,
 };

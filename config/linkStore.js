@@ -8,17 +8,17 @@ const linkSchema = {
             properties: {
                 name: {
                     type: 'string',
-                    minLength: 1
+                    minLength: 1,
                 },
                 url: {
                     type: 'string',
-                   minLength: 1
-                }
+                    minLength: 1,
+                },
             },
-            required: ['name', 'url']
+            required: ['name', 'url'],
         },
-        default: []
-    }
+        default: [],
+    },
 };
 
 const linkStore = new Conf({
