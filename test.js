@@ -1,3 +1,5 @@
+// this is a test command for codeforces new command. maybe by next week?
+
 async function getTodaysSolvedProblems(handle) {
     // Get today's start timestamp (00:00:00 UTC)
     const today = new Date();
