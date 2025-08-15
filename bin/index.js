@@ -21,7 +21,10 @@ import {
     openLink,
 } from '../commands/index.js';
 
-const notifier = updateNotifier({ pkg });
+const notifier = updateNotifier({
+    pkg,
+    updateCheckInterval: 1000 * 60 * 60, // Check for updates every hour
+});
 
 const { prompt } = enquirer;
 
@@ -29,7 +32,7 @@ if (notifier.update) {
     const { shouldUpdate } = await prompt({
         type: 'confirm',
         name: 'shouldUpdate',
-        message: `A new version (${notifier.update.latest}) is available! You’re on ${notifier.update.current}. Do you want to update now?`,
+        message: `A new version (${notifier.update.latest}) is available! Do you want to update now?`,
     });
 
     if (shouldUpdate) {
