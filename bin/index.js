@@ -17,7 +17,8 @@ import {
     setSap,
     codeforces,
     setLink,
-    showLink
+    showLink,
+    openLink
 } from '../commands/index.js';
 
 const notifier = updateNotifier({ pkg });
@@ -128,10 +129,10 @@ program
     .action(showLink);
 
 
-// program
-//     .command('open [url]')
-//     .aliases(['o'])
-//     .description('Open a URL in the default web browser')
-//     .action()
+program
+    .command('open-link <name>')
+    .aliases(['open', 'o'])
+    .description('Open a URL in the default web browser')
+    .action(openLink);
 
 program.parse(process.argv);
